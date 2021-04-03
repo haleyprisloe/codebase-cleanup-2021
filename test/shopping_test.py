@@ -1,6 +1,7 @@
 #some code used from class
 
 import os
+import pytest
 from pandas import read_csv
 from app.shopping import format_usd, lookup_product
 
