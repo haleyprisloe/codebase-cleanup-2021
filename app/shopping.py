@@ -12,7 +12,7 @@ def format_usd(my_price):
     """
     return f"${my_price:,.2f}"
 
-def lookup_product(product_id, all_products)
+def lookup_product(product_id, all_products):
     """
     Params:
         product_id(str) like "8"
@@ -59,12 +59,12 @@ if __name__ == "__main__":
     print("CHECKOUT AT: " + str(checkout_at.strftime("%Y-%M-%d %H:%m:%S")))
     print("---------")
     for p in selected_products:
-        print("SELECTED PRODUCT: " + p["name"] + "   " + '${:.2f}'.format(p["price"]))
+        print("SELECTED PRODUCT: " + p["name"] + "   " + format_usd(p["price"]))
 
     print("---------")
-    print(f"SUBTOTAL: {subtotal:,.2f}")
-    print(f"TAX: {(subtotal * 0.0875):.2f}")
-    print(f"TOTAL: {((subtotal * 0.0875) + subtotal):.2f}")
+    print(f"SUBTOTAL: {format_usd(subtotal)}")
+    print(f"TAX: {format_usd(subtotal * 0.0875)}")
+    print(f"TOTAL: {format_usd((subtotal * 0.0875) + subtotal)}")
     print("---------")
     print("THANK YOU! PLEASE COME AGAIN SOON!")
     print("---------")
